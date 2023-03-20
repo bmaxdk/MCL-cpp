@@ -227,22 +227,25 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
 int main()
 {
     // TODO: Instantiate a robot object from the Robot class
-
-
+    Robot myrobot;
+    cout<<myrobot.show_pose()<<endl;
     // TODO: Set robot new position to x=30.0, y=50.0 and orientation=PI/2
-
+    myrobot.set(30.0, 50, M_PI/2);
+    cout<<myrobot.show_pose()<<endl;
 
     // TODO: Turn clockwise by PI/2 and move by 15 meters
-
+    myrobot.move(-M_PI/2.0, 15.0);
+    cout<<myrobot.show_pose()<<endl;
 
     // TODO: Print the distance from the robot toward the eight landmarks
-
+    cout<<myrobot.read_sensors()<<endl;
 
     // TODO: Turn clockwise by PI/2 and move by 10 meters
-
+    myrobot.move(-M_PI/2.0, 10.0);
+    cout<<myrobot.show_pose()<<endl;
 
     // TODO: Print the distance from the robot toward the eight landmarks
-
+    cout<<myrobot.read_sensors()<<endl;
 
     return 0;
 }
