@@ -269,7 +269,27 @@ int main()
     //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
 
     //TODO: Resample the particles with a sample probability proportional to the importance weight
- 
+    // Resampling Wheel.
+    Robot p3[n];
+    int index = gen_real_random() * n;
+    double beta = 0;
+    double w_max = max(w, n);
 
+    for(unsigned int i=0; i<n; i++)
+    {
+        beta += gen_real_random()*2.0*w_max;
+        while(w[index]<beta)
+        {
+            beta -= w[index];
+            index = mod((index+1), n);
+        }
+        p3[i]=p3[index];
+    }
+    int i =0;
+    for(const auto val : p3)
+    {
+        p[i] = val;
+        cout<<p[i++].show_pose()<<endl;
+    }
     return 0;
 }
