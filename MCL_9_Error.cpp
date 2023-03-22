@@ -293,7 +293,7 @@ int main()
         //####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
         
         // TODO: Evaluate the error by priting it in this form:
-        // cout << "Step = " << t << ", Evaluation = " << ErrorValue << endl;
+        cout << "Step = " << t << ", Evaluation = " << evaluation(myrobot, p, n) << endl;
 
 
     } //End of Steps loop
